@@ -32,7 +32,9 @@ syncdir() {
 
     # Restore local changes
     echo "Saving local changes"
-    $GITCMD stash pop
+#     $GITCMD stash pop
+    $GITCMD stash apply
+    $GITCMD stash drop
     $GITCMD add *.$FILETYPE
     $GITCMD commit -am '.'
 
